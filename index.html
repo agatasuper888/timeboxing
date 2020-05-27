@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kurs Reacta</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+
+
+    <style>
+        .App {
+            font-family: sans-serif;
+        }
+
+        .TimeboxEditor {
+            text-align: right;
+            border: 1px solid gray;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        input {
+            min-width: 60%;
+            margin-left: 20px;
+            font-size: 16px;
+        }
+
+        button {
+            font-size: 16px;
+            margin-left: 10px;
+        }
+
+        .Timebox {
+            border: 1px solid gray;
+            border-radius: 5px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .Clock {
+            color: orangered;
+        }
+
+        .ProgressBar {
+            border: 1px solid orangered;
+            border-radius: 5px;
+            height: 25px;
+            margin-bottom: 20px;
+            padding: 5px;
+        }
+
+        .ProgressBar>div {
+            height: 100%;
+            background-color: orangered;
+        }
+
+        .inactive {
+            filter: blur(2px) grayscale(1);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Kurs Reacta! Tydzień1</h1>
+    <hr>
+    <div class="App">
+        <div class="TimeboxEditor inactive">
+            <label>Co robisz? <input disabled value="Uczę się skrótów" type="text"></label><br>
+            <label>Ile minut? <input disabled value="25" type="number"></label><br>
+            <button>Zacznij</button>
+        </div>
+        <div class="Timebox">
+            <h1>Uczę się skrótów</h1>
+            <h2 class="Clock">Pozostało 13:28</h2>
+            <div id="root"></div>
+            <div class="ProgressBar">
+                <div style="width: 45%"></div>
+            </div>
+            <button disabled>Start</button>
+            <button>Stop</button>
+            <button>Pauzuj</button>
+            Liczba przerw: 2
+        </div>
+
+
+</body>
+<script type="text/babel">
+    const rootElement = document.getElementById("root");
+
+
+    const element = (<h2 className="Clock">Pozostało 13:28</h2>);
+
+    ReactDOM.render(element, rootElement);
+
+</script>
+
+</html>
